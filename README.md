@@ -60,4 +60,30 @@ request.post(
 );
 ```
 
+### Parameter Details
 
+The API has the following parameters:
+
+| Parameter | Required | Default | Details |
+| --- | --- | --- | --- |
+| key | yes | none | The API key from your account. This must be passed as a header |
+| text | yes | none | The text to be verified |
+
+### Web Demo
+
+A demo can be found at [https://www.persona-ai.com/verify](https://www.persona-ai.com/verify).
+
+### Response
+
+The API returns the following response:
+
+| Parameter | Details |
+| --- | --- |
+| status | If a status code of 200 is returned, the request was successful. If a status code of 400 is returned, then the request failed. |
+| detection | The labels that determine if the text is human or computer generated. |
+
+### Accuracy
+Currently, we estimate Verify has a 93%-95% accuracy of flagging computer generated text. However, with how quickly the technology is changing, we recommend using the API as a tool, but not as a replacement for human review.
+
+### Rate Limits
+Currently, we have a rate limit of 20 requests per minute in our research preview. If you need an increased rate limit, please contact us.
