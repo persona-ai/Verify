@@ -82,8 +82,26 @@ The API returns the following response:
 | status | If a status code of 200 is returned, the request was successful. If a status code of 400 is returned, then the request failed. |
 | detection | The labels that determine if the text is human or computer generated. |
 
+An example of a response object would look something like this:
+
+```JSON
+{
+  "status": "success",
+  "detection": [
+    {
+      "label": "Human Written",
+      "score": 0.99
+    },
+    {
+      "label": "Computer Generated",
+      "score": 0.01
+    }
+  ]
+}
+```
+
 ### Accuracy
-Currently, we estimate Verify has a 93%-95% accuracy of flagging computer generated text. However, with how quickly the technology is changing, we recommend using the API as a tool, but not as a replacement for human review.
+Currently, we estimate Verify has a 93%-95% accuracy of flagging computer generated text. However, with how quickly the technology is changing, we recommend using the API as a tool, but not as a replacement for human review. There will be instances where Verify performs worse (such as mixed text, small amounts of computer generated text combined with human written text and very short texts).
 
 ### Rate Limits
 Currently, we have a rate limit of 20 requests per minute in our research preview. If you need an increased rate limit, please contact us.
